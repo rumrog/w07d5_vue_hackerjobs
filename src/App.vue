@@ -1,12 +1,13 @@
 <template>
   <div id="app">
-    <h1>Hacker Jobs</h1>
+    <navbar title='Hacker Jobs' />
     <jobs-list :jobs='jobs'></jobs-list>
   </div>
 </template>
 
 <script>
 import {eventBus} from './main.js'
+import Navbar from './components/Navbar.vue'
 import ListComponent from './components/ListComponent.vue'
 import JobsList from './components/JobsList.vue'
 
@@ -30,17 +31,22 @@ export default {
       })
     },
     components: {
-    "jobs-list": JobsList
+      'navbar': Navbar,
+      'jobs-list': JobsList
   }
 }
 </script>
 
 <style>
+html {
+  text-size: 16px;
+}
+
 body {
   font-family: Verdana, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #121212;
+  background-color: black;
   color: white;
 }
 </style>

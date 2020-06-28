@@ -1,5 +1,9 @@
 <template>
-  <li v-on:click='handleClick'><h2>{{ job.title }}</h2></li>
+  <li v-on:click='handleClick'>
+    <p>{{ job.title }}</p><a v-bind:href="job.url">({{ job.url }})</a>
+    <br>
+    <p>{{ job.time_ago }}</p>
+  </li>
 </template>
 
 <script>
@@ -15,3 +19,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+li {
+  list-style-type: none;
+}
+</style>
