@@ -72,9 +72,14 @@ body {
   background-color:#2E3440;
 }
 
+li {
+  list-style-type: none;
+}
+
 a {
   color: #D8D8D8;
   text-decoration: none;
+  padding-right: 0.5em;
 }
 a:hover {
   text-decoration: underline;

@@ -11,7 +11,7 @@ export default {
 
 <style scoped>
 h2 {
-  font: bold 2em Verdana;
+  font: bold 1.5em Verdana;
   color: #ECEFF4;
   background-color: #3B4252;
   padding: 5px;

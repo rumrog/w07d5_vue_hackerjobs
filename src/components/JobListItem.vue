@@ -1,9 +1,12 @@
 <template>
   <li>
-    <p>{{ job.title }}</p><a v-bind:href="job.url">({{ job.url }})</a>
-    <br>
-    <p class='time_ago'>{{ job.time_ago }}</p>
-    <button v-on:click='addBookmark'>bookmark</button>
+    <div class='in-line'>
+      <li><a class='title' v-bind:href="job.url">{{ job.title }}</a></li><a class='domain' v-bind:href="job.domain">({{ job.domain }})</a>
+    </div>
+    <div class='in-line'>
+      <p class='time_ago'>{{ job.time_ago }}</p>
+      <button style='font-size: 1em' v-on:click='addBookmark'>bookmark</button>
+    </div>
   </li>
 </template>
 
@@ -22,11 +25,35 @@ export default {
 </script>
 
 <style scoped>
-li {
-  list-style-type: none;
+
+.title {
   color: white;
 }
+
+.domain,
 .time_ago {
-  color: #d8d8d8;
+  color: #A1A7B1;
+  padding-right: 0.5em;
+}
+
+button {
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: #81A1C1;
+  cursor: pointer;
+}
+
+button:hover {
+  text-decoration: underline;
+}
+
+button:focus {
+  outline: none;
+}
+
+.in-line {
+  display: flex;
 }
 </style>

@@ -4,7 +4,6 @@
 </template>
 
 <script>
-// import {eventBus} from '../main.js'
 export default {
   props: ['job'],
 }
@@ -12,9 +11,5 @@ export default {
 
 <style lang="css" scoped>
 
-li {
-  list-style-type: none;
-  color: white;
-}
 
 </style>
