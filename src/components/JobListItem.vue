@@ -1,8 +1,9 @@
 <template>
-  <li v-on:click='handleClick'>
+  <li>
     <p>{{ job.title }}</p><a v-bind:href="job.url">({{ job.url }})</a>
     <br>
-    <p>{{ job.time_ago }}</p>
+    <p class='time_ago'>{{ job.time_ago }}</p>
+    <button v-on:click='addBookmark'>bookmark</button>
   </li>
 </template>
 
@@ -10,11 +11,11 @@
 import {eventBus} from '../main.js'
 
 export default {
-  name: 'list-component',
+  name: 'job-list-item',
   props: ['job'],
   methods: {
-    handleClick(){
-      eventBus.$emit('job-selected', this.job)
+    addBookmark: function() {
+      eventBus.$emit('bookmark-added', this.job)
     }
   }
 };
@@ -23,5 +24,9 @@ export default {
 <style scoped>
 li {
   list-style-type: none;
+  color: white;
+}
+.time_ago {
+  color: #d8d8d8;
 }
 </style>
